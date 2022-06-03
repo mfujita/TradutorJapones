@@ -1,0 +1,17 @@
+D:\desenvolvimento\TradutorJapones\TradutorJapones\bin\Debug\net6.0-windows\TradutorJapones.exe
+D:\desenvolvimento\TradutorJapones\TradutorJapones\bin\Debug\net6.0-windows\TradutorJapones.deps.json
+D:\desenvolvimento\TradutorJapones\TradutorJapones\bin\Debug\net6.0-windows\TradutorJapones.runtimeconfig.json
+D:\desenvolvimento\TradutorJapones\TradutorJapones\bin\Debug\net6.0-windows\TradutorJapones.dll
+D:\desenvolvimento\TradutorJapones\TradutorJapones\bin\Debug\net6.0-windows\TradutorJapones.pdb
+D:\desenvolvimento\TradutorJapones\TradutorJapones\obj\Debug\net6.0-windows\TradutorJapones.csproj.AssemblyReference.cache
+D:\desenvolvimento\TradutorJapones\TradutorJapones\obj\Debug\net6.0-windows\TradutorJapones.Form1.resources
+D:\desenvolvimento\TradutorJapones\TradutorJapones\obj\Debug\net6.0-windows\TradutorJapones.csproj.GenerateResource.cache
+D:\desenvolvimento\TradutorJapones\TradutorJapones\obj\Debug\net6.0-windows\TradutorJapones.GeneratedMSBuildEditorConfig.editorconfig
+D:\desenvolvimento\TradutorJapones\TradutorJapones\obj\Debug\net6.0-windows\TradutorJapones.AssemblyInfoInputs.cache
+D:\desenvolvimento\TradutorJapones\TradutorJapones\obj\Debug\net6.0-windows\TradutorJapones.AssemblyInfo.cs
+D:\desenvolvimento\TradutorJapones\TradutorJapones\obj\Debug\net6.0-windows\TradutorJapones.csproj.CoreCompileInputs.cache
+D:\desenvolvimento\TradutorJapones\TradutorJapones\obj\Debug\net6.0-windows\TradutorJapones.dll
+D:\desenvolvimento\TradutorJapones\TradutorJapones\obj\Debug\net6.0-windows\refint\TradutorJapones.dll
+D:\desenvolvimento\TradutorJapones\TradutorJapones\obj\Debug\net6.0-windows\TradutorJapones.pdb
+D:\desenvolvimento\TradutorJapones\TradutorJapones\obj\Debug\net6.0-windows\TradutorJapones.genruntimeconfig.cache
+D:\desenvolvimento\TradutorJapones\TradutorJapones\obj\Debug\net6.0-windows\ref\TradutorJapones.dll

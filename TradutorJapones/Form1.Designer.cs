@@ -67,7 +67,7 @@
             // 
             // txtSaidaJapones
             // 
-            this.txtSaidaJapones.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSaidaJapones.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSaidaJapones.Location = new System.Drawing.Point(17, 265);
             this.txtSaidaJapones.Multiline = true;
             this.txtSaidaJapones.Name = "txtSaidaJapones";
@@ -97,10 +97,10 @@
             this.tpJap2Port.Controls.Add(this.txtSaidaPortugues);
             this.tpJap2Port.Controls.Add(this.btnJap2Port);
             this.tpJap2Port.Controls.Add(this.txtEntradaJapones);
-            this.tpJap2Port.Location = new System.Drawing.Point(4, 27);
+            this.tpJap2Port.Location = new System.Drawing.Point(4, 24);
             this.tpJap2Port.Name = "tpJap2Port";
             this.tpJap2Port.Padding = new System.Windows.Forms.Padding(3);
-            this.tpJap2Port.Size = new System.Drawing.Size(865, 473);
+            this.tpJap2Port.Size = new System.Drawing.Size(865, 476);
             this.tpJap2Port.TabIndex = 1;
             this.tpJap2Port.Text = "Japonês para português";
             this.tpJap2Port.UseVisualStyleBackColor = true;

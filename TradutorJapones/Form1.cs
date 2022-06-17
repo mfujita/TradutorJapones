@@ -123,154 +123,105 @@
         {
             if (txtEntradaJapones.Text != "")
             {
-                char[] todoTexto = txtEntradaJapones.Text.ToCharArray();
-                List<int> posicao1_4 = new List<int>();
                 List<string> portugues = new List<string>();
 
-                for (int i = 0; i < todoTexto.Length; i++)
-                {
-                    if (todoTexto[i] == 'ゃ' ||
-                        todoTexto[i] == 'ょ' ||
-                        todoTexto[i] == 'ゅ')
-                    {
-                        posicao1_4.Add(i);
-                    }
-                }
+                //TODO: Encontrar todas as pronúncias das contrações de 2 síbalas
+
+                string todoTexto = txtEntradaJapones.Text.Replace("しゃ", "!").
+                    Replace("しょ", "@").
+                    Replace("しゅ", "#");
 
                 for (int i = 0; i < todoTexto.Length; i++)
                 {
-                    for (int menor = 0; menor <= posicao1_4.Count; menor++)
-                    {
-                        if (i == menor &&
-                            (todoTexto[i] == 'ゃ' ||
-                            todoTexto[i] == 'ょ' ||
-                            todoTexto[i] == 'ゅ'))
-                        {
-                            if (todoTexto[i] == ' ') { portugues.Add(" "); }
+                    if (todoTexto[i] == ' ') { portugues.Insert(i, " "); }
+                    else if (todoTexto[i] == 'あ') { portugues.Insert(i, "A"); }
+                    else if (todoTexto[i] == 'え') { portugues.Insert(i, "E"); }
+                    else if (todoTexto[i] == 'い') { portugues.Insert(i, "I"); }
+                    else if (todoTexto[i] == 'お') { portugues.Insert(i, "O"); }
+                    else if (todoTexto[i] == 'う') { portugues.Insert(i, "U"); }
 
-                            else if (todoTexto[i] == 'ゃ')
-                            {
-                                if (todoTexto[i - 1] == 'し')
-                                {
-                                    portugues.Insert(i - 1, "Sha");
-                                }
-                            }
+                    else if (todoTexto[i] == 'か') { portugues.Insert(i, "KA"); }
+                    else if (todoTexto[i] == 'け') { portugues.Insert(i, "KE"); }
+                    else if (todoTexto[i] == 'き') { portugues.Insert(i, "KI"); }
+                    else if (todoTexto[i] == 'こ') { portugues.Insert(i, "KO"); }
+                    else if (todoTexto[i] == 'く') { portugues.Insert(i, "KU"); }
 
-                            else if (todoTexto[i] == 'ょ')
-                            {
-                                if (todoTexto[i - 1] == 'し')
-                                {
-                                    portugues.Insert(i - 1, "Sho");
-                                }
-                            }
+                    else if (todoTexto[i] == 'さ') { portugues.Insert(i, "SA"); }
+                    else if (todoTexto[i] == 'せ') { portugues.Insert(i, "SE"); }
+                    else if (todoTexto[i] == 'し') { portugues.Insert(i, "SHI"); }
+                    else if (todoTexto[i] == 'そ') { portugues.Insert(i, "SO"); }
+                    else if (todoTexto[i] == 'す') { portugues.Insert(i, "SU"); }
 
-                            else if (todoTexto[i] == 'ゅ')
-                            {
-                                if (todoTexto[i - 1] == 'し')
-                                {
-                                    portugues.Insert(i - 1, "Shu");
-                                }
-                            }
-                        }
-                    }
-                }
-                    
-                for (int i = 0; i < todoTexto.Length; i++)
-                {
-                    //for (int menor = 0; menor <= posicao1_4.Count; menor++)
-                    //{
-                    if (todoTexto[i] == 'ゃ' ||
-                        todoTexto[i] == 'ょ' ||
-                        todoTexto[i] == 'ゅ')
-                    {
-                        continue;
-                    }
-                    else
-                    { 
-                        if (todoTexto[i] == ' ' ) { portugues.Insert(i, " ");  }
-                        else if (todoTexto[i] == 'あ') { portugues.Insert(i, "A"); }
-                        else if (todoTexto[i] == 'え') { portugues.Insert(i, "E"); }
-                        else if (todoTexto[i] == 'い') { portugues.Insert(i, "I"); }
-                        else if (todoTexto[i] == 'お') { portugues.Insert(i, "O"); }
-                        else if (todoTexto[i] == 'う') { portugues.Insert(i, "U"); }
+                    else if (todoTexto[i] == 'た') { portugues.Insert(i, "TA"); }
+                    else if (todoTexto[i] == 'て') { portugues.Insert(i, "TE"); }
+                    else if (todoTexto[i] == 'ち') { portugues.Insert(i, "TI"); }
+                    else if (todoTexto[i] == 'と') { portugues.Insert(i, "TO"); }
+                    else if (todoTexto[i] == 'つ') { portugues.Insert(i, "TSU"); }
 
-                        else if (todoTexto[i] == 'か') { portugues.Insert(i, "KA"); }
-                        else if (todoTexto[i] == 'け') { portugues.Insert(i, "KE"); }
-                        else if (todoTexto[i] == 'き') { portugues.Insert(i, "KI"); }
-                        else if (todoTexto[i] == 'こ') { portugues.Insert(i, "KO"); }
-                        else if (todoTexto[i] == 'く') { portugues.Insert(i, "KU"); }
+                    else if (todoTexto[i] == 'な') { portugues.Insert(i, "NA"); }
+                    else if (todoTexto[i] == 'ね') { portugues.Insert(i, "NE"); }
+                    else if (todoTexto[i] == 'に') { portugues.Insert(i, "NI"); }
+                    else if (todoTexto[i] == 'の') { portugues.Insert(i, "NO"); }
+                    else if (todoTexto[i] == 'ぬ') { portugues.Insert(i, "NU"); }
 
-                        else if (todoTexto[i] == 'さ') { portugues.Insert(i, "SA"); }
-                        else if (todoTexto[i] == 'せ') { portugues.Insert(i, "SE"); }
-                        else if (todoTexto[i] == 'し') { portugues.Insert(i, "SHI"); }
-                        else if (todoTexto[i] == 'そ') { portugues.Insert(i, "SO"); }
-                        else if (todoTexto[i] == 'す') { portugues.Insert(i, "SU"); }
+                    else if (todoTexto[i] == 'は') { portugues.Insert(i, "HA"); }
+                    else if (todoTexto[i] == 'へ') { portugues.Insert(i, "HE"); }
+                    else if (todoTexto[i] == 'ひ') { portugues.Insert(i, "HI"); }
+                    else if (todoTexto[i] == 'ほ') { portugues.Insert(i, "HO"); }
+                    else if (todoTexto[i] == 'ふ') { portugues.Insert(i, "FU"); }
 
-                        else if (todoTexto[i] == 'た') { portugues.Insert(i, "TA"); }
-                        else if (todoTexto[i] == 'て') { portugues.Insert(i, "TE"); }
-                        else if (todoTexto[i] == 'ち') { portugues.Insert(i, "TI"); }
-                        else if (todoTexto[i] == 'と') { portugues.Insert(i, "TO"); }
-                        else if (todoTexto[i] == 'つ') { portugues.Insert(i, "TSU"); }
+                    else if (todoTexto[i] == 'ま') { portugues.Insert(i, "MA"); }
+                    else if (todoTexto[i] == 'め') { portugues.Insert(i, "ME"); }
+                    else if (todoTexto[i] == 'み') { portugues.Insert(i, "MI"); }
+                    else if (todoTexto[i] == 'も') { portugues.Insert(i, "MO"); }
+                    else if (todoTexto[i] == 'む') { portugues.Insert(i, "MU"); }
 
-                        else if (todoTexto[i] == 'な') { portugues.Insert(i, "NA"); }
-                        else if (todoTexto[i] == 'ね') { portugues.Insert(i, "NE"); }
-                        else if (todoTexto[i] == 'に') { portugues.Insert(i, "NI"); }
-                        else if (todoTexto[i] == 'の') { portugues.Insert(i, "NO"); }
-                        else if (todoTexto[i] == 'ぬ') { portugues.Insert(i, "NU"); }
+                    else if (todoTexto[i] == 'ら') { portugues.Insert(i, "RA"); }
+                    else if (todoTexto[i] == 'れ') { portugues.Insert(i, "RE"); }
+                    else if (todoTexto[i] == 'り') { portugues.Insert(i, "RI"); }
+                    else if (todoTexto[i] == 'ろ') { portugues.Insert(i, "RO"); }
+                    else if (todoTexto[i] == 'る') { portugues.Insert(i, "RU"); }
 
-                        else if (todoTexto[i] == 'は') { portugues.Insert(i, "HA"); }
-                        else if (todoTexto[i] == 'へ') { portugues.Insert(i, "HE"); }
-                        else if (todoTexto[i] == 'ひ') { portugues.Insert(i, "HI"); }
-                        else if (todoTexto[i] == 'ほ') { portugues.Insert(i, "HO"); }
-                        else if (todoTexto[i] == 'ふ') { portugues.Insert(i, "FU"); }
+                    else if (todoTexto[i] == 'わ') { portugues.Insert(i, "WA"); }
+                    else if (todoTexto[i] == 'を') { portugues.Insert(i, "WO"); }
 
-                        else if (todoTexto[i] == 'ま') { portugues.Insert(i, "MA"); }
-                        else if (todoTexto[i] == 'め') { portugues.Insert(i, "ME"); }
-                        else if (todoTexto[i] == 'み') { portugues.Insert(i, "MI"); }
-                        else if (todoTexto[i] == 'も') { portugues.Insert(i, "MO"); }
-                        else if (todoTexto[i] == 'む') { portugues.Insert(i, "MU"); }
+                    else if (todoTexto[i] == 'ん') { portugues.Insert(i, "N"); }
 
-                        else if (todoTexto[i] == 'ら') { portugues.Insert(i, "RA"); }
-                        else if (todoTexto[i] == 'れ') { portugues.Insert(i, "RE"); }
-                        else if (todoTexto[i] == 'り') { portugues.Insert(i, "RI"); }
-                        else if (todoTexto[i] == 'ろ') { portugues.Insert(i, "RO"); }
-                        else if (todoTexto[i] == 'る') { portugues.Insert(i, "RU"); }
+                    else if (todoTexto[i] == 'が') { portugues.Insert(i, "GA"); }
+                    else if (todoTexto[i] == 'げ') { portugues.Insert(i, "GE"); }
+                    else if (todoTexto[i] == 'ぎ') { portugues.Insert(i, "GI"); }
+                    else if (todoTexto[i] == 'ご') { portugues.Insert(i, "GO"); }
+                    else if (todoTexto[i] == 'ぐ') { portugues.Insert(i, "GU"); }
 
-                        else if (todoTexto[i] == 'わ') { portugues.Insert(i, "WA"); }
-                        else if (todoTexto[i] == 'を') { portugues.Insert(i, "WO"); }
+                    else if (todoTexto[i] == 'ざ') { portugues.Insert(i, "ZA"); }
+                    else if (todoTexto[i] == 'ぜ') { portugues.Insert(i, "ZE"); }
+                    else if (todoTexto[i] == 'じ') { portugues.Insert(i, "ZI"); }
+                    else if (todoTexto[i] == 'ぞ') { portugues.Insert(i, "ZO"); }
+                    else if (todoTexto[i] == 'ず') { portugues.Insert(i, "ZU"); }
 
-                        else if (todoTexto[i] == 'ん') { portugues.Insert(i, "N"); }
+                    else if (todoTexto[i] == 'だ') { portugues.Insert(i, "DA"); }
+                    else if (todoTexto[i] == 'で') { portugues.Insert(i, "DE"); }
+                    else if (todoTexto[i] == 'ぢ') { portugues.Insert(i, "DI"); }
+                    else if (todoTexto[i] == 'ど') { portugues.Insert(i, "DO"); }
+                    else if (todoTexto[i] == 'づ') { portugues.Insert(i, "DU"); }
 
-                        else if (todoTexto[i] == 'が') { portugues.Insert(i, "GA"); }
-                        else if (todoTexto[i] == 'げ') { portugues.Insert(i, "GE"); }
-                        else if (todoTexto[i] == 'ぎ') { portugues.Insert(i, "GI"); }
-                        else if (todoTexto[i] == 'ご') { portugues.Insert(i, "GO"); }
-                        else if (todoTexto[i] == 'ぐ') { portugues.Insert(i, "GU"); }
+                    else if (todoTexto[i] == 'ば') { portugues.Insert(i, "BA"); }
+                    else if (todoTexto[i] == 'べ') { portugues.Insert(i, "BE"); }
+                    else if (todoTexto[i] == 'び') { portugues.Insert(i, "BI"); }
+                    else if (todoTexto[i] == 'ぼ') { portugues.Insert(i, "BO"); }
+                    else if (todoTexto[i] == 'ぶ') { portugues.Insert(i, "BU"); }
 
-                        else if (todoTexto[i] == 'ざ') { portugues.Insert(i, "ZA"); }
-                        else if (todoTexto[i] == 'ぜ') { portugues.Insert(i, "ZE"); }
-                        else if (todoTexto[i] == 'じ') { portugues.Insert(i, "ZI"); }
-                        else if (todoTexto[i] == 'ぞ') { portugues.Insert(i, "ZO"); }
-                        else if (todoTexto[i] == 'ず') { portugues.Insert(i, "ZU"); }
+                    else if (todoTexto[i] == 'ぱ') { portugues.Insert(i, "PA"); }
+                    else if (todoTexto[i] == 'ぺ') { portugues.Insert(i, "PE"); }
+                    else if (todoTexto[i] == 'ぴ') { portugues.Insert(i, "PI"); }
+                    else if (todoTexto[i] == 'ぽ') { portugues.Insert(i, "PO"); }
+                    else if (todoTexto[i] == 'ぷ') { portugues.Insert(i, "PU"); }
 
-                        else if (todoTexto[i] == 'だ') { portugues.Insert(i, "DA"); }
-                        else if (todoTexto[i] == 'で') { portugues.Insert(i, "DE"); }
-                        else if (todoTexto[i] == 'ぢ') { portugues.Insert(i, "DI"); }
-                        else if (todoTexto[i] == 'ど') { portugues.Insert(i, "DO"); }
-                        else if (todoTexto[i] == 'づ') { portugues.Insert(i, "DU"); }
+                    else if (todoTexto[i] == '!') { portugues.Insert(i, "SHA"); }
+                    else if (todoTexto[i] == '@') { portugues.Insert(i, "SHO"); }
+                    else if (todoTexto[i] == '#') { portugues.Insert(i, "SHU"); }
 
-                        else if (todoTexto[i] == 'ば') { portugues.Insert(i, "BA"); }
-                        else if (todoTexto[i] == 'べ') { portugues.Insert(i, "BE"); }
-                        else if (todoTexto[i] == 'び') { portugues.Insert(i, "BI"); }
-                        else if (todoTexto[i] == 'ぼ') { portugues.Insert(i, "BO"); }
-                        else if (todoTexto[i] == 'ぶ') { portugues.Insert(i, "BU"); }
-
-                        else if (todoTexto[i] == 'ぱ') { portugues.Insert(i, "PA"); }
-                        else if (todoTexto[i] == 'ぺ') { portugues.Insert(i, "PE"); }
-                        else if (todoTexto[i] == 'ぴ') { portugues.Insert(i, "PI"); }
-                        else if (todoTexto[i] == 'ぽ') { portugues.Insert(i, "PO"); }
-                        else if (todoTexto[i] == 'ぷ') { portugues.Insert(i, "PU"); }
-                    }
+                    //TODO Substituir todas os símbolos pelas respectivas sílabas
                 }
 
                 foreach (var item in portugues)

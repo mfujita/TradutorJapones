@@ -1,4 +1,6 @@
-﻿namespace TradutorJapones
+﻿// https://www.nhk.or.jp/lesson/pt/letters/hiragana.html
+
+namespace TradutorJapones
 {
     public partial class Form1 : Form
     {
@@ -105,9 +107,25 @@
                     else if (todoTexto[i].ToUpper() == "PO") { japones.Add("ぽ"); }
                     else if (todoTexto[i].ToUpper() == "PU") { japones.Add("ぷ"); }
 
+                    else if (todoTexto[i].ToUpper() == "YA") { japones.Add("や"); }
+                    else if (todoTexto[i].ToUpper() == "YO") { japones.Add("よ"); }
+                    else if (todoTexto[i].ToUpper() == "YU") { japones.Add("ゆ"); }
+
                     else if (todoTexto[i].ToUpper() == "SHA") { japones.Add("しゃ"); }
                     else if (todoTexto[i].ToUpper() == "SHO") { japones.Add("しょ"); }
                     else if (todoTexto[i].ToUpper() == "SHU") { japones.Add("しゅ"); }
+
+                    else if (todoTexto[i].ToUpper() == "THA") { japones.Add("ちゃ"); }
+                    else if (todoTexto[i].ToUpper() == "THO") { japones.Add("ちょ"); }
+                    else if (todoTexto[i].ToUpper() == "THU") { japones.Add("ちゅ"); }
+
+                    else if (todoTexto[i].ToUpper() == "KYA") { japones.Add("きゃ"); }
+                    else if (todoTexto[i].ToUpper() == "KYO") { japones.Add("きょ"); }
+                    else if (todoTexto[i].ToUpper() == "KYU") { japones.Add("きゅ"); }
+
+                    else if (todoTexto[i].ToUpper() == "DYA") { japones.Insert(i, "ぢゃ"); }
+                    else if (todoTexto[i].ToUpper() == "DYO") { japones.Insert(i, "ぢょ"); }
+                    else if (todoTexto[i].ToUpper() == "DYU") { japones.Insert(i, "ぢゅ"); }
                 }
 
                 txtSaidaJapones.Text = "";
@@ -129,7 +147,16 @@
 
                 string todoTexto = txtEntradaJapones.Text.Replace("しゃ", "!").
                     Replace("しょ", "@").
-                    Replace("しゅ", "#");
+                    Replace("しゅ", "#").
+                    Replace("ちゃ", "$").
+                    Replace("ちょ", "%").
+                    Replace("ちゅ", "¨").
+                    Replace("きゃ", "&").
+                    Replace("きょ", "*").
+                    Replace("きゅ", "(").
+                    Replace("ぢゃ", ")").
+                    Replace("ぢょ", "+").
+                    Replace("ぢゅ", "=");
 
                 for (int i = 0; i < todoTexto.Length; i++)
                 {
@@ -221,8 +248,23 @@
                     else if (todoTexto[i] == '@') { portugues.Insert(i, "SHO"); }
                     else if (todoTexto[i] == '#') { portugues.Insert(i, "SHU"); }
 
+                    else if (todoTexto[i] == '$') { portugues.Insert(i, "THA"); }
+                    else if (todoTexto[i] == '%') { portugues.Insert(i, "THO"); }
+                    else if (todoTexto[i] == '¨') { portugues.Insert(i, "THU"); }
+
+                    else if (todoTexto[i] == '&') { portugues.Insert(i, "KYA"); }
+                    else if (todoTexto[i] == '*') { portugues.Insert(i, "KYO"); }
+                    else if (todoTexto[i] == '(') { portugues.Insert(i, "KYU"); }
+
+                    else if (todoTexto[i] == ')') { portugues.Insert(i, "DYA"); }
+                    else if (todoTexto[i] == '+') { portugues.Insert(i, "DYO"); }
+                    else if (todoTexto[i] == '=') { portugues.Insert(i, "DYU"); }
+
+
                     //TODO Substituir todas os símbolos pelas respectivas sílabas
                 }
+
+                txtSaidaPortugues.Text = "";
 
                 foreach (var item in portugues)
                 {

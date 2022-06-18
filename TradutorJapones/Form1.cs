@@ -11,7 +11,7 @@ namespace TradutorJapones
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            txtEntradaJapones.Text = "しゃしん";
+            Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - Width - 10,10);
         }
 
         private void btnPort2Jap_Click(object sender, EventArgs e)
@@ -23,7 +23,7 @@ namespace TradutorJapones
 
                 for (int i = 0; i < todoTexto.Length; i++)
                 {
-                    if (todoTexto[i] == "" && todoTexto[i+1] == "") { japones.Add(" "); }
+                    if (todoTexto[i] == "") { japones.Add(" "); }
                     else if (todoTexto[i].ToUpper() == "A") { japones.Add("あ"); }
                     else if (todoTexto[i].ToUpper() == "E") { japones.Add("え"); }
                     else if (todoTexto[i].ToUpper() == "I") { japones.Add("い"); }
@@ -126,6 +126,38 @@ namespace TradutorJapones
                     else if (todoTexto[i].ToUpper() == "DYA") { japones.Insert(i, "ぢゃ"); }
                     else if (todoTexto[i].ToUpper() == "DYO") { japones.Insert(i, "ぢょ"); }
                     else if (todoTexto[i].ToUpper() == "DYU") { japones.Insert(i, "ぢゅ"); }
+
+                    else if (todoTexto[i].ToUpper() == "NYA") { japones.Insert(i, "にゃ"); }
+                    else if (todoTexto[i].ToUpper() == "NYO") { japones.Insert(i, "にょ"); }
+                    else if (todoTexto[i].ToUpper() == "NYU") { japones.Insert(i, "にゅ"); }
+
+                    else if (todoTexto[i].ToUpper() == "HYA") { japones.Insert(i, "ひゃ"); }
+                    else if (todoTexto[i].ToUpper() == "HYO") { japones.Insert(i, "ひょ"); }
+                    else if (todoTexto[i].ToUpper() == "HYU") { japones.Insert(i, "ひゅ"); }
+
+                    else if (todoTexto[i].ToUpper() == "MYA") { japones.Insert(i, "みゃ"); }
+                    else if (todoTexto[i].ToUpper() == "MYO") { japones.Insert(i, "みょ"); }
+                    else if (todoTexto[i].ToUpper() == "MYU") { japones.Insert(i, "みゅ"); }
+
+                    else if (todoTexto[i].ToUpper() == "RYA") { japones.Insert(i, "りゃ"); }
+                    else if (todoTexto[i].ToUpper() == "RYO") { japones.Insert(i, "りょ"); }
+                    else if (todoTexto[i].ToUpper() == "RYU") { japones.Insert(i, "りゅ"); }
+
+                    else if (todoTexto[i].ToUpper() == "GYA") { japones.Insert(i, "ぎゃ"); }
+                    else if (todoTexto[i].ToUpper() == "GYO") { japones.Insert(i, "ぎょ"); }
+                    else if (todoTexto[i].ToUpper() == "GYU") { japones.Insert(i, "ぎゅ"); }
+
+                    else if (todoTexto[i].ToUpper() == "GYA") { japones.Insert(i, "ぎゃ"); }
+                    else if (todoTexto[i].ToUpper() == "GYO") { japones.Insert(i, "ぎょ"); }
+                    else if (todoTexto[i].ToUpper() == "GYU") { japones.Insert(i, "ぎゅ"); }
+
+                    else if (todoTexto[i].ToUpper() == "BYA") { japones.Insert(i, "びゃ"); }
+                    else if (todoTexto[i].ToUpper() == "BYO") { japones.Insert(i, "びょ"); }
+                    else if (todoTexto[i].ToUpper() == "BYU") { japones.Insert(i, "びゅ"); }
+
+                    else if (todoTexto[i].ToUpper() == "PYA") { japones.Insert(i, "ぴゃ"); }
+                    else if (todoTexto[i].ToUpper() == "PYO") { japones.Insert(i, "ぴょ"); }
+                    else if (todoTexto[i].ToUpper() == "PYU") { japones.Insert(i, "ぴゅ"); }
                 }
 
                 txtSaidaJapones.Text = "";
@@ -139,11 +171,11 @@ namespace TradutorJapones
 
         private void btnJap2Port_Click(object sender, EventArgs e)
         {
+
+            //TODO Diferenciar sílabas com D e J
             if (txtEntradaJapones.Text != "")
             {
                 List<string> portugues = new List<string>();
-
-                //TODO: Encontrar todas as pronúncias das contrações de 2 síbalas
 
                 string todoTexto = txtEntradaJapones.Text.Replace("しゃ", "!").
                     Replace("しょ", "@").
@@ -154,9 +186,35 @@ namespace TradutorJapones
                     Replace("きゃ", "&").
                     Replace("きょ", "*").
                     Replace("きゅ", "(").
+
+                    Replace("ゃ", "").
+                    Replace("ょ", "").
+                    Replace("ゅ", "").
+
                     Replace("ぢゃ", ")").
                     Replace("ぢょ", "+").
-                    Replace("ぢゅ", "=");
+                    Replace("ぢゅ", "=").
+                    Replace("にゃ", "[").
+                    Replace("にょ", "]").
+                    Replace("にゅ", "/").
+                    Replace("ひゃ", "{").
+                    Replace("ひょ", "}").
+                    Replace("ひゅ", "|").
+                    Replace("みゃ", "ª").
+                    Replace("みょ", "º").
+                    Replace("みゅ", "§").
+                    Replace("りゃ", "<").
+                    Replace("りょ", ">").
+                    Replace("りゅ", ":").
+                    Replace("ぎゃ", "¹").
+                    Replace("ぎょ", "²").
+                    Replace("ぎゅ", "³").
+                    Replace("びゃ", "¢").
+                    Replace("びょ", "¬").
+                    Replace("びゅ", "£").
+                    Replace("ぴゃ", "«").
+                    Replace("ぴょ", "»").
+                    Replace("ぴゅ", "ø");
 
                 for (int i = 0; i < todoTexto.Length; i++)
                 {
@@ -181,7 +239,7 @@ namespace TradutorJapones
 
                     else if (todoTexto[i] == 'た') { portugues.Insert(i, "TA"); }
                     else if (todoTexto[i] == 'て') { portugues.Insert(i, "TE"); }
-                    else if (todoTexto[i] == 'ち') { portugues.Insert(i, "TI"); }
+                    else if (todoTexto[i] == 'ち') { portugues.Insert(i, "CHI"); }
                     else if (todoTexto[i] == 'と') { portugues.Insert(i, "TO"); }
                     else if (todoTexto[i] == 'つ') { portugues.Insert(i, "TSU"); }
 
@@ -244,6 +302,10 @@ namespace TradutorJapones
                     else if (todoTexto[i] == 'ぽ') { portugues.Insert(i, "PO"); }
                     else if (todoTexto[i] == 'ぷ') { portugues.Insert(i, "PU"); }
 
+                    else if (todoTexto[i] == 'や') { portugues.Insert(i, "YA"); }
+                    else if (todoTexto[i] == 'よ') { portugues.Insert(i, "YO"); }
+                    else if (todoTexto[i] == 'ゆ') { portugues.Insert(i, "YU"); }
+
                     else if (todoTexto[i] == '!') { portugues.Insert(i, "SHA"); }
                     else if (todoTexto[i] == '@') { portugues.Insert(i, "SHO"); }
                     else if (todoTexto[i] == '#') { portugues.Insert(i, "SHU"); }
@@ -260,8 +322,33 @@ namespace TradutorJapones
                     else if (todoTexto[i] == '+') { portugues.Insert(i, "DYO"); }
                     else if (todoTexto[i] == '=') { portugues.Insert(i, "DYU"); }
 
+                    else if (todoTexto[i] == '[') { portugues.Insert(i, "NYA"); }
+                    else if (todoTexto[i] == ']') { portugues.Insert(i, "NYO"); }
+                    else if (todoTexto[i] == '/') { portugues.Insert(i, "NYU"); }
 
-                    //TODO Substituir todas os símbolos pelas respectivas sílabas
+                    else if (todoTexto[i] == '{') { portugues.Insert(i, "HYA"); }
+                    else if (todoTexto[i] == '}') { portugues.Insert(i, "HYO"); }
+                    else if (todoTexto[i] == '|') { portugues.Insert(i, "HYU"); }
+
+                    else if (todoTexto[i] == 'ª') { portugues.Insert(i, "MYA"); }
+                    else if (todoTexto[i] == 'º') { portugues.Insert(i, "MYO"); }
+                    else if (todoTexto[i] == '§') { portugues.Insert(i, "MYU"); }
+
+                    else if (todoTexto[i] == '>') { portugues.Insert(i, "RYA"); }
+                    else if (todoTexto[i] == '<') { portugues.Insert(i, "RYO"); }
+                    else if (todoTexto[i] == ':') { portugues.Insert(i, "RYU"); }
+
+                    else if (todoTexto[i] == '¹') { portugues.Insert(i, "GYA"); }
+                    else if (todoTexto[i] == '²') { portugues.Insert(i, "GYO"); }
+                    else if (todoTexto[i] == '³') { portugues.Insert(i, "GYU"); }
+
+                    else if (todoTexto[i] == '£') { portugues.Insert(i, "BYA"); }
+                    else if (todoTexto[i] == '¢') { portugues.Insert(i, "BYO"); }
+                    else if (todoTexto[i] == '¬') { portugues.Insert(i, "BYU"); }
+
+                    else if (todoTexto[i] == '«') { portugues.Insert(i, "PYA"); }
+                    else if (todoTexto[i] == '»') { portugues.Insert(i, "PYO"); }
+                    else if (todoTexto[i] == 'ø') { portugues.Insert(i, "PYU"); }
                 }
 
                 txtSaidaPortugues.Text = "";
